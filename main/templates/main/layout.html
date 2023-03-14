@@ -11,37 +11,10 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <header class="container text-center">
-        <div class="row">
-            <div class="col-md header-el-h">
-                <a class="header-logo" href="{% url 'home' %}">
-                    <img src="{% static 'main/img/logo.png' %}" style="zoom: 8%">
-                </a>
-            </div>
-            <div class="col-md-8 header-el-h">
-                <a class="header-el btn-middle fw-semibold" href="{% url 'films' %}">Фильмы</a>
-                <a class="header-el btn-middle fw-semibold" href="#">Сериалы</a>
-                <a class="header-el btn-middle fw-semibold" href="#">Передачи</a>
-                <a class="header-el btn-middle fw-semibold" href="#">Подкасты</a>
-                <a class="header-el btn-middle fw-semibold" href="#">Концерты</a>
-                <a class="header-el btn-middle fw-semibold" href="#">Архив</a>
-            </div>
-            <div class="col-md header-el-h">
-                {% if user.is_authenticated %}
-                    {{ user.username }}
-                {% else %}
-                    <a class="header-el btn-login fw-semibold" href="{% url 'login' %}">Войти</a>
-                {% endif %}
-                
-            </div>
-        </div>
-    </header>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+    {% block content %}
+    {% endblock %}
     <footer>
-        <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center footer-h">
             <div class="footer-el col-sm d-flex justify-content-around">
                 <div class="footer-el-h d-flex flex-column mb-3">
                     <a href="{% url 'about' %}">О нас</a>

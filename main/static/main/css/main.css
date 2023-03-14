@@ -1,16 +1,11 @@
-:root{
-    --header-bg-color: #fff;
-    --main-bg-color: #fff;
-}
-
 header{
-    background: var(--header-bg-color);
-    margin-bottom: 15px;
+    margin-bottom: 120px;
+    padding-top: 10px;
 }
 
 .header-el{
     text-decoration: none;
-    opacity: 0.6;
+    opacity: 0.7;
     filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.5));
     color: #1b1b1b;
     background: none;
@@ -31,57 +26,21 @@ header{
 }
 
 main{
-    background: var(--main-bg-color);
     text-align: center;
-}
-
-.main-h{
-    padding-top: 70px;
 }
 
 .home-h{
     background: linear-gradient(229.81deg, #FFD784 0%, #FBCE96 35.7%, #E3B49C 68.13%);
-    padding-bottom: 80px;
-}
-
-.films-sub-h{
-    background: #efefef;
-}
-
-.films-sub-desc{
-    color: #737F8D;
-    margin-top: 5px;
-}
-
-.films-sub-btn{
-    background: linear-gradient(88.49deg, #E7DD00 0%, #FF0000 100%);
-    margin: 0px auto;
-    margin-top: 50px;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 30px;
-    border: none;
-    border-radius: 25px;
-    transition: transform 0.4s ease;
-    will-change: transform;
-}
-
-.films-sub-btn:hover{
-    color: #fff;
-    transform: scale(1.0625);
-}
-
-.films-sub-btn-desc{
-    color: #737F8D;
-    margin-top: 10px;
-    margin-bottom: 140px;
-    font-size: 12px;
 }
 
 footer{
     background: #000000;
-    padding: 40px 0px;
+    padding: 80px 0px;
     color: #e2e2e2;
+}
+
+.footer-h{
+    margin: 0;
 }
 
 footer a{

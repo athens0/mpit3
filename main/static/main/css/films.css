@@ -1,0 +1,133 @@
+.header-films{
+    margin-bottom: 160px;
+}
+
+body{
+    background-image: url('../img/horses.png');
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-position-y: top;
+}
+
+header{
+    padding-top: 10px;
+}
+
+.header-el{
+    text-decoration: none;
+    opacity: 0.7;
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.5));
+    color: #fff;
+    background: none;
+    transition: opacity 0.3s ease;
+}
+
+.header-el.btn-middle{
+    margin: 0px 1.2%;
+}
+
+.header-el:hover{
+    color: #fff;
+    opacity: 1;
+}
+
+.header-el-h{
+    margin-top: 20px;
+}
+
+.films-sub-desc{
+    color: #A6ADB6;
+    margin-top: 5px;
+}
+
+.films-sub-h{
+    color: #fff;
+}
+
+.films-sub-title{
+    font-size: 60px;
+}
+
+.films-sub-desc{
+    margin-top: 20px;
+}
+
+.films-sub-btn{
+    background: linear-gradient(88.49deg, #000000 21.15%, #5243C2 100%);
+    margin: 0px auto;
+    margin-top: 90px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 25px;
+    transition: transform 0.4s ease;
+    will-change: transform;
+}
+
+.films-sub-btn:hover{
+    color: #fff;
+    transform: scale(1.0625);
+}
+
+.films-sub-btn-desc{
+    color: #A6ADB6;
+    margin-top: 20px;
+    margin-bottom: 250px;
+    font-size: 16px;
+}
+
+.blur{
+    position: absolute;
+    width: 100%;
+    height: 270px;
+    left: 0px;
+    bottom: 0px;
+    z-index: 2;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(7.5px);
+}
+
+.bottom-notif{
+    width: 100%;
+    height: 270px;
+    padding-top: 100px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    z-index: 3;
+}
+
+.btn-bottom{
+    text-align: center;
+    color: #fff;
+    background: #1F1F1F;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px 40px;
+    margin: 0px auto;
+}
+
+footer{
+    background: #000000;
+    padding: 80px 0px;
+    color: #e2e2e2;
+}
+
+.footer-h{
+    margin: 0;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+.footer-el a{
+    color: #e2e2e2;
+}
+
+.footer-el a:hover{
+    color: #ffffff;
+}
