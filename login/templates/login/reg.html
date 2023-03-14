@@ -1,0 +1,27 @@
+{% extends 'login/layout.html' %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+    <form class="login-form border flex-column mb-3">
+        <h3 class="login-title">Регистрация</h3>
+        <div class="mb-3">
+            <label for="inputEmail1" class="form-label">Адрес электронной почты</label>
+            <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword1" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="inputPassword1">
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword2" class="form-label">Повторите пароль</label>
+            <input type="password" class="form-control" id="inputPassword2">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="check1">
+            <label class="form-check-label" for="check1">Согласен с условиями пользования</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+        <span class="login-end">Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></span>
+    </form>
+{% endblock %}
