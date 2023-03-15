@@ -7,44 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/films.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
     <title>Фильмы</title>
 </head>
 <body>
-    <header class="container text-center header-films">
-        <div class="row">
-            <div class="col-md header-el-h">
-                <a class="header-logo" href="{% url 'home' %}">
-                    <img src="{% static 'main/img/logo_white.png' %}" style="zoom: 65%">
-                </a>
+    <main>
+        <header class="container text-center">
+            <div class="row">
+                <div class="col-md header-el-h">
+                    <a href="{% url 'home' %}">
+                        <img class="header-logo" src="{% static 'main/img/logo_white.png' %}" style="zoom: 70%">
+                    </a>
+                </div>
+                <div class="col-md-8 header-el-h">
+                    <a class="header-el btn-middle fw-semibold" href="{% url 'films' %}">Фильмы</a>
+                    <a class="header-el btn-middle fw-semibold" href="#">Сериалы</a>
+                    <a class="header-el btn-middle fw-semibold" href="#">Передачи</a>
+                    <a class="header-el btn-middle fw-semibold" href="#">Подкасты</a>
+                    <a class="header-el btn-middle fw-semibold" href="#">Концерты</a>
+                    <a class="header-el btn-middle fw-semibold" href="#">Архив</a>
+                </div>
+                <div class="col-md header-el-h">
+                    {% if user.is_authenticated %}
+                        {{ user.username }}
+                    {% else %}
+                        <a class="header-el btn-login fw-semibold" href="{% url 'login' %}">Войти</a>
+                    {% endif %}
+                    
+                </div>
             </div>
-            <div class="col-md-8 header-el-h">
-                <a class="header-el btn-middle fw-semibold" href="{% url 'films' %}">Фильмы</a>
-                <a class="header-el btn-middle fw-semibold" href="#">Сериалы</a>
-                <a class="header-el btn-middle fw-semibold" href="#">Передачи</a>
-                <a class="header-el btn-middle fw-semibold" href="#">Подкасты</a>
-                <a class="header-el btn-middle fw-semibold" href="#">Концерты</a>
-                <a class="header-el btn-middle fw-semibold" href="#">Архив</a>
-            </div>
-            <div class="col-md header-el-h">
-                {% if user.is_authenticated %}
-                    {{ user.username }}
-                {% else %}
-                    <a class="header-el btn-login fw-semibold" href="{% url 'login' %}">Войти</a>
-                {% endif %}
+        </header>
+        <div class="text-center">
+            <div class="d-flex flex-column mb-3 films-sub-h">
+                <h1 class="fw-bold films-sub-title">Якутские фильмы по подписке<br>Ki:nesire Плюс</h1>
+                <p class="films-sub-desc">Отменить подписку можно в<br>любой момент</p>
+                <a class="films-sub-btn fw-bold" href="{% url 'subscription' %}">Попробовать 30 дней бесплатно</a>
+                <p class="films-sub-btn-desc fw-medium">Затем 299 рублей в месяц</p>
             </div>
         </div>
-    </header>
-    <div class="films-h text-center">
-        <div class="d-flex flex-column mb-3 films-sub-h">
-            <h1 class="fw-bold films-sub-title">Якутские фильмы по подписке<br>Киинэсирэ Плюс</h1>
-            <p class="films-sub-desc">Отменить подписку можно в<br>любой момент</p>
-            <a class="films-sub-btn fw-bold">Попробовать 30 дней бесплатно</a>
-            <p class="films-sub-btn-desc fw-medium">Затем 299 рублей в месяц</p>
-        </div>
-    </div>
-    <div class="films-rows" style="margin-top: 130px; position:relative">
+    </main>
+    <div class="films-rows">
         <div class="films-row" style="padding: 0px 50px; margin-bottom: 70px;">
             <p class="fw-bold fs-2">Новинки</p>
             <div id="carousel1" class="carousel slide">
@@ -55,33 +59,41 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
-                            <div class="col" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/ivana.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <a href="{% url 'home' %}film/1">
+                                    <img src="{% static 'main/img/cards/ivana.jpg' %}">
+                                </a>
                             </div>
-                            <div class="col" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/nuiji.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <a href="{% url 'home' %}film/1">
+                                    <img src="{% static 'main/img/cards/nuiji.jpg' %}">
+                                </a>
                             </div>
-                            <div class="col" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/babyreka.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <a href="{% url 'home' %}film/1">
+                                    <img src="{% static 'main/img/cards/babyreka.jpg' %}">
+                                </a>
                             </div>
-                            <div class="col" style="width:400px; height:200px; padding: 0px;">
-                                <img src="{% static 'main/img/cards/bortolyot.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <a href="{% url 'home' %}film/1">
+                                    <img src="{% static 'main/img/cards/bortolyot.jpg' %}">
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
-                            <div class="col" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/ivana.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/ivana.jpg' %}">
                             </div>
-                            <div class="col" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/nuiji.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/nuiji.jpg' %}">
                             </div>
-                            <div class="col" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/babyreka.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/babyreka.jpg' %}">
                             </div>
-                            <div class="col" style="width:400px; height:200px; padding: 0px;">
-                                <img src="{% static 'main/img/cards/bortolyot.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/bortolyot.jpg' %}">
                             </div>
                         </div>
                     </div>
@@ -102,33 +114,33 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/cheerin.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/cheerin.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/zoloto.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/zoloto.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/boganet.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/boganet.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px;">
-                                <img src="{% static 'main/img/cards/darkhan.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/darkhan.jpg' %}">
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/cheerin.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/cheerin.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/zoloto.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/zoloto.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/boganet.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/boganet.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px;">
-                                <img src="{% static 'main/img/cards/darkhan.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/darkhan.jpg' %}">
                             </div>
                         </div>
                     </div>
@@ -149,33 +161,33 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/molodost.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/molodost.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/mambo.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/mambo.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/chuvak.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/chuvak.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px;">
-                                <img src="{% static 'main/img/cards/it.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/it.jpg' %}">
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/molodost.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/molodost.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/mambo.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/mambo.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/chuvak.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/chuvak.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px;">
-                                <img src="{% static 'main/img/cards/it.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/it.jpg' %}">
                             </div>
                         </div>
                     </div>
@@ -196,33 +208,33 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/sailik.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/sailik.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/jay.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/jay.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/naahara.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/naahara.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px;">
-                                <img src="{% static 'main/img/cards/setteexsir.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/setteexsir.jpg' %}">
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/sailik.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/sailik.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/jay.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/jay.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/naahara.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/naahara.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px;">
-                                <img src="{% static 'main/img/cards/setteexsir.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/setteexsir.jpg' %}">
                             </div>
                         </div>
                     </div>
@@ -236,9 +248,9 @@
         </div>
         <div class="blur"></div>
         <div class="bottom-notif d-flex flex-column mb-3">
-            <p class="fw-semibold text-center" style="color: #fff; font-size: 40px; filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 1));">Здесь еще есть что посмотреть.</p>
+            <p class="fw-semibold text-center text-bottom">Здесь еще есть что посмотреть.</p>
             <div class="btn-bottom flex-shrink-1">
-                <span class="fw-semibold">ПРИСОЕДИНИТЬСЯ СЕЙЧАС</span>
+                <a href="{% url 'register' %}" class="fw-semibold">ПРИСОЕДИНИТЬСЯ СЕЙЧАС</a>
             </div>
         </div>
         <div class="films-row" style="padding: 0px 50px;">
@@ -247,33 +259,33 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/pugalo.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/pugalo.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/bortolyot.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/bortolyot.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/start.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/start.jpg' %}">
                             </div>
-                            <div class="col img-btn" style="width:400px; height:200px; padding: 0px;">
-                                <img src="{% static 'main/img/cards/chaar.jpg' %}" style="zoom:120%">
+                            <div class="col img-btn">
+                                <img src="{% static 'main/img/cards/chaar.jpg' %}">
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
                             <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/pugalo.jpg' %}" style="zoom:120%">
+                                <img src="{% static 'main/img/cards/pugalo.jpg' %}">
                             </div>
                             <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/bortolyot.jpg' %}" style="zoom:120%">
+                                <img src="{% static 'main/img/cards/bortolyot.jpg' %}">
                             </div>
                             <div class="col img-btn" style="width:400px; height:200px; padding: 0px; margin-right: 50px;">
-                                <img src="{% static 'main/img/cards/start.jpg' %}" style="zoom:120%">
+                                <img src="{% static 'main/img/cards/start.jpg' %}">
                             </div>
                             <div class="col img-btn" style="width:400px; height:200px; padding: 0px;">
-                                <img src="{% static 'main/img/cards/chaar.jpg' %}" style="zoom:120%">
+                                <img src="{% static 'main/img/cards/chaar.jpg' %}">
                             </div>
                         </div>
                     </div>
@@ -281,24 +293,6 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div class="row justify-content-md-center footer-h">
-            <div class="footer-el col-sm d-flex justify-content-around">
-                <div class="footer-el-h d-flex flex-column mb-3">
-                    <a href="{% url 'about' %}">О нас</a>
-                    <a href="#">Подписка</a>
-                </div>
-                <div class="footer-el-h d-flex flex-column mb-3">
-                    <a href="#">Поддержка</a>
-                    <a href="#">Создателям</a>
-                </div>
-                <div class="footer-el-h d-flex flex-column mb-3">
-                    <a href="#">Соглашение</a>
-                    <a href="#">Приватность</a>
-                    <a href="#">Лицензии</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    {% include 'main/footer.html' %}
 </body>
 </html>

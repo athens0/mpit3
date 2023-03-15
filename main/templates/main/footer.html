@@ -1,0 +1,25 @@
+{% load static %}
+<footer>
+    <div class="row justify-content-md-center footer-h">
+        <div class="footer-el col-sm d-flex justify-content-around">
+            <div class="footer-el-h d-flex flex-column mb-3">
+                <a href="https://t.me/kiinesire">
+                    <img src="{% static 'main/img/telegram.png' %}">
+                </a>
+            </div>
+            <div class="footer-el-h d-flex flex-column mb-3">
+                <a href="{% url 'about' %}">О нас</a>
+                <a href="{% url 'subscription' %}">Подписка</a>
+            </div>
+            <div class="footer-el-h d-flex flex-column mb-3">
+                <a href="https://t.me/rlycluster">Поддержка</a>
+                <a href="https://t.me/yarrichelli">Создателям</a>
+            </div>
+            <div class="footer-el-h d-flex flex-column mb-3">
+                <a href="{% url 'docs' %}">Соглашение</a>
+                <a href="{% url 'docs' %}">Приватность</a>
+                <a href="{% url 'docs' %}">Лицензии</a>
+            </div>
+        </div>
+    </div>
+</footer>

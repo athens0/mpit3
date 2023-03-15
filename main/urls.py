@@ -5,5 +5,7 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('about/', views.about, name='about'),
     path('films/', views.films_main, name='films'),
-    re_path(r'^film/(?P<id>\d+)$', views.films_film, name='film'),
+    path('subscription/', views.subscription, name='subscription'),
+    path('docs/', views.docs, name='docs'),
+    re_path(r'^film/(?P<id>\d+)$', views.films_film, name='film')
 ]

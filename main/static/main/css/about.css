@@ -1,0 +1,75 @@
+main{
+    background-image: url('../img/leon.png');
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-position-y: top;
+}
+
+header{
+    padding-top: 10px;
+    margin-bottom: 160px;
+}
+
+.header-logo{
+    filter: drop-shadow(0px 0px 30px rgba(255, 255, 255, 1));
+}
+
+.header-el{
+    text-decoration: none;
+    opacity: 0.7;
+    filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.5));
+    color: #fff;
+    background: none;
+    transition: opacity 0.3s ease;
+}
+
+.header-el.btn-middle{
+    margin: 0px 1.2%;
+}
+
+.header-el:hover{
+    color: #fff;
+    opacity: 1;
+}
+
+.header-el-h{
+    margin-top: 20px;
+}
+
+.title{
+    color:#fff;
+    font-size: 60px;
+    margin-bottom: 400px;
+    filter: drop-shadow(0px 0px 30px rgba(0, 20, 0, 1));
+}
+
+.trt2{
+    padding-top: 50px;
+}
+
+.trt3{
+    padding-top: 50px;
+    margin-bottom: 100px;
+}
+
+.left{
+    align-self: center;
+    margin-bottom: 50px;
+}
+
+.title-mascot{
+    max-width: 400px;
+}
+
+.title-mascot-2{
+    max-width: 400px;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.photo{
+    margin: 0px 20px;
+    margin-top: 60px;
+}

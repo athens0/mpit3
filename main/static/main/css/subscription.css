@@ -1,0 +1,114 @@
+body{
+    background: linear-gradient(229.81deg, #FFD784 0%, #FBCE96 35.7%, #E3B49C 68.13%);
+}
+
+main{
+    text-align: center;
+    padding-top: 140px;
+}
+
+.title-h{
+    padding-bottom: 100px;
+}
+
+.title{
+    margin-bottom: 30px;
+    font-size: 46px;
+    text-align: left;
+}
+
+.left{
+    margin-bottom: 50px;
+}
+
+.title-mascot{
+    max-width: 700px;
+}
+
+.desc{
+    font-size: 20px;
+    text-align: left;
+    justify-content: left;
+}
+
+.trt2{
+    margin-top: 0px;
+    background: #fff;
+    padding: 60px 5%;
+}
+
+.trt2-c{
+    padding: 50px 0px;
+}
+
+.trt2 h1{
+    font-size: 50px;
+    text-align: left;
+}
+
+.trt2 p{
+    text-align: left;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.sub-h{
+    background: #1F1F1F;
+    border-radius: 25px;
+    color: #fff;
+    padding: 40px 30px;
+    margin-bottom: 40px;
+}
+
+.prem{
+    background: linear-gradient(220.55deg, #1F00FF 0%, rgba(0, 0, 0, 0.9) 61.25%, #1F1F1F 100%);
+}
+
+.table{
+    margin-top: 160px;
+    padding: 40px 5%;
+    background: #F6F6F6;
+    border-radius: 15px;
+    margin-bottom: 100px;
+}
+
+th{
+    text-align: left;
+}
+
+.table-btn{
+    margin: 30px 0px;
+    text-decoration: none;
+    color: #fff;
+    background: #000;
+    border-radius: 30px;
+    padding: 10px 15px;
+}
+
+.table-btn:hover{
+    color: #e1e1e1;
+}
+
+.th-r{
+    text-align: center;
+}
+
+.sub-last{
+    margin-bottom: 90px;
+}
+
+.sub-btn{
+    background: #fff;
+    border-radius: 30px;
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 12px 20%;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.sub-btn:hover{
+    color:#000;
+    opacity: 0.9;
+}

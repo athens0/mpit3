@@ -1,5 +1,4 @@
 header{
-    margin-bottom: 120px;
     padding-top: 10px;
 }
 
@@ -23,14 +22,6 @@ header{
 
 .header-el-h{
     margin-top: 20px;
-}
-
-main{
-    text-align: center;
-}
-
-.home-h{
-    background: linear-gradient(229.81deg, #FFD784 0%, #FBCE96 35.7%, #E3B49C 68.13%);
 }
 
 footer{

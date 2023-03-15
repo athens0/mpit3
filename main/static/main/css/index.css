@@ -1,0 +1,50 @@
+body{
+    background: linear-gradient(229.81deg, #FFD784 0%, #FBCE96 35.7%, #E3B49C 68.13%);
+}
+
+main{
+    text-align: center;
+    padding-top: 140px;
+}
+
+.title{
+    margin-bottom: 30px;
+    font-size: 60px;
+}
+
+.search{
+    margin-top: 150px;
+    max-width: 400px;
+}
+
+.search-bar{
+    margin: 0px 10px;
+    margin-bottom: 10px;
+}
+
+.search-btn{
+    margin-bottom: 10px;
+    max-width: 100px;
+}
+
+.trt2{
+    margin-top: 100px;
+    background: #fff;
+    padding: 180px 5%;
+}
+
+.trt2 h1{
+    font-size: 50px;
+    text-align: left;
+}
+
+.trt2 p{
+    text-align: left;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.left{
+    align-self: center;
+    margin-bottom: 50px;
+}

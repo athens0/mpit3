@@ -1,48 +1,136 @@
 {% extends 'main/layout.html' %}
 {% load static %}
 
-{% block title %}Главная страница{% endblock %}
+{% block links %}
+    <link rel="stylesheet" href="{% static 'main/css/subscription.css' %}">
+{% endblock %}
+
+{% block title %}Подписка{% endblock %}
 
 {% block content %}
-    <div class="home-h text-center">
-        <header class="container text-center">
-            <div class="row">
-                <div class="col-md header-el-h">
-                    <a class="header-logo" href="{% url 'home' %}">
-                        <img src="{% static 'main/img/logo.png' %}" style="zoom: 35%">
-                    </a>
+    <main>
+        <div class="container title-h">
+            <div class="row justify-content-between">
+                <div class="col-sm left">
+                    <h1 class="fw-bold title col-sm">Получайте больше удовольствия с подпиской Ki:nesire</h1>
+                    <p class="desc">
+                        Поддержите проект монетой и получите неограниченный доступ к
+                        тысячам фильмам, сериалам, подкастам, концертам и архиву!
+                    </p>
                 </div>
-                <div class="col-md-8 header-el-h">
-                    <a class="header-el btn-middle fw-semibold" href="{% url 'films' %}">Фильмы</a>
-                    <a class="header-el btn-middle fw-semibold" href="#">Сериалы</a>
-                    <a class="header-el btn-middle fw-semibold" href="#">Передачи</a>
-                    <a class="header-el btn-middle fw-semibold" href="#">Подкасты</a>
-                    <a class="header-el btn-middle fw-semibold" href="#">Концерты</a>
-                    <a class="header-el btn-middle fw-semibold" href="#">Архив</a>
-                </div>
-                <div class="col-md header-el-h">
-                    {% if user.is_authenticated %}
-                        {{ user.username }}
-                    {% else %}
-                        <a class="header-el btn-login fw-semibold" href="{% url 'login' %}">Войти</a>
-                    {% endif %}
-                    
+                <img class="col-sm title-mascot" src="{% static 'main/img/mascot2.png' %}">
+            </div>
+        </div>
+        <div class="trt2">
+            <div class="container">
+                <div class="row justify-content-around">
+                    <div class="sub-h col-sm-4">
+                        <h3 class="fw-bold">Ki:nesire Плюс</h3>
+                        <p>· Все новинки кино</p>
+                        <p>· Все сериалы</p>
+                        <p>· Все подкасты</p>
+                        <p class="fw-bold sub-last">· Отсутствие рекламы</p>
+                        <a href="#" class="fw-bold sub-btn">Подписаться</a>
+                    </div>
+                    <div class="sub-h prem col-sm-4">
+                        <h3 class="fw-bold">Ki:nesire Премиум</h3>
+                        <p>· Все записи концертов</p>
+                        <p>· Все архивные записи</p>
+                        <p>· Эксклюзивные подкасты</p>
+                        <p class="fw-bold sub-last">· Все преимущества плюс</p>
+                        <a href="#" class="fw-bold sub-btn">Подписаться</a>
+                    </div>
                 </div>
             </div>
-        </header>
-
-        <div class="trt2 d-flex justify-content-center" style="margin-top: 100px; background: #fff; padding: 180px;">
-            <div class="row">
-                <div class="col" style="margin: 0px 100px;">
-                    <h1 class="fw-bold" style="font-size: 60px;">Смотрите везде</h1>
-                    <p style="text-align: left; margin-top: 25px; font-size: 20px;">Смотрите неограниченное количество <br>
-                        фильмов и телепередач на телефоне, <br>
-                        планшете, ноутбуке, компьютере не переплачивая.</p>
-                </div>
-                <div class="col" style="margin: 0px 100px">
-                    <img src="{% static 'main/img/mockup.png' %}">
+            <div class="container">
+                <div class="table">
+                    <h1 class="fw-bold table-title">Выберите лучший <br>
+                        тариф для Вас</h1>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Возможности</th>
+                                    <th class="th-r" scope="col">Плюс</th>
+                                    <th class="th-r" scope="col">Премиум</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Отсутствие рекламы</th>
+                                    <td>
+                                        <img src="{% static 'main/img/yes.png' %}">
+                                    </td>
+                                    <td>
+                                        <img src="{% static 'main/img/yes.png' %}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Все новинки кино</th>
+                                    <td>
+                                        <img src="{% static 'main/img/yes.png' %}">
+                                    </td>
+                                    <td>
+                                        <img src="{% static 'main/img/yes.png' %}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Все сериалы</th>
+                                    <td>
+                                        <img src="{% static 'main/img/yes.png' %}">
+                                    </td>
+                                    <td>
+                                        <img src="{% static 'main/img/yes.png' %}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Все подкасты</th>
+                                    <td>
+                                        <img src="{% static 'main/img/yes.png' %}">
+                                    </td>
+                                    <td>
+                                        <img src="{% static 'main/img/yes.png' %}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Все записи концертов</th>
+                                    <td>
+                                        <img src="{% static 'main/img/no.png' %}">
+                                    </td>
+                                    <td>
+                                        <img src="{% static 'main/img/yes.png' %}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Все архивные записи</th>
+                                    <td>
+                                        <img src="{% static 'main/img/no.png' %}">
+                                    </td>
+                                    <td>
+                                        <img src="{% static 'main/img/yes.png' %}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Эксклюзивный контент</th>
+                                    <td>
+                                        <img src="{% static 'main/img/no.png' %}">
+                                    </td>
+                                    <td>
+                                        <img src="{% static 'main/img/yes.png' %}">
+                                    </td>
+                                </tr>
+                                <tr style="border: none">
+                                    <th style="border: none" scope="row"></th>
+                                    <td style="border: none">
+                                        <a class="table-btn" href="#">Подписаться</a>
+                                    </td>
+                                    <td style="border: none">
+                                        <a class="table-btn" href="#">Подписаться</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 {% endblock %}
