@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+{% endblock %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+    {% include 'main/header.html' %}
+    <main>
+        <h1>
+            {{ user.username }}
+        </h1>
+        <h2>
+            {{ user.email }}
+        </h2>
+        <h2>
+            {{ user.date_joined }}
+        </h2>
+        <h2>
+            {% if user.is_active %}
+                Сейчас на сайте
+            {% endif %}
+        </h2>
+    </main>
+{% endblock %}

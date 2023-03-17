@@ -5,9 +5,10 @@
     <link rel="stylesheet" href="{% static 'main/css/film.css' %}">
 {% endblock %}
 
-{% block title %}ki:nesire{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block content %}
+    {% include 'main/header.html' %}
     <main>
         <div class="ctn">
             <div class="d-flex justify-content-between">

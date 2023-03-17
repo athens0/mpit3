@@ -1,0 +1,45 @@
+{% load static %}
+<header class="container text-center">
+    <div class="row">
+        <div class="col-md header-el-h">
+            <a href="{% url 'main:home' %}">
+                {% if dark %}
+                    <img class="header-logo" src="{% static 'main/img/logo_white.png' %}" style="zoom: 70%">
+                {% else %}
+                    <img class="header-logo" src="{% static 'main/img/logo.png' %}" style="zoom: 35%">
+                {% endif %}
+            </a>
+        </div>
+        <div class="col-md-8 header-el-h">
+            <a class="header-el btn-middle fw-semibold" href="{% url 'main:films' %}">Фильмы</a>
+            <a class="header-el btn-middle fw-semibold" href="#">Сериалы</a>
+            <a class="header-el btn-middle fw-semibold" href="#">Передачи</a>
+            <a class="header-el btn-middle fw-semibold" href="#">Подкасты</a>
+            <a class="header-el btn-middle fw-semibold" href="#">Концерты</a>
+            <a class="header-el btn-middle fw-semibold" href="#">Архив</a>
+        </div>
+        <div class="col-md header-el-h">
+            {% if user.is_authenticated %}
+                <div class="dropdown">
+                    <a class="header-el username fw-semibold" href="{% url 'main:profile' %}">{{ user.username }}</a>
+                    <div class="dropdown-content">
+                        <a class="dropdown-btn d-flex justify-content-startn align-items-center" href="{% url 'main:profile' %}">
+                            <i class="fa-regular fa-user dropdown-icon"></i>
+                            <span>Профиль</span>
+                        </a>
+                        <a class="dropdown-btn d-flex justify-content-start align-items-center" href="#">
+                            <i class="fa-solid fa-star dropdown-icon"></i>
+                            <span>Избранное</span>
+                        </a>
+                        <a class="dropdown-btn d-flex justify-content-start align-items-center" href="{% url 'logout' %}">
+                            <i class="fa-solid fa-right-from-bracket dropdown-icon"></i>
+                            <span>Выйти</span>
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+                <a class="header-el btn-login fw-semibold" href="{% url 'login' %}">Войти</a>
+            {% endif %}
+        </div>
+    </div>
+</header>

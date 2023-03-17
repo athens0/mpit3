@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Movies
 
 
@@ -7,11 +7,11 @@ def index(request):
 
 
 def about(request):
-    return render(request, 'main/about.html')
+    return render(request, 'main/about.html', {'dark': True})
 
 
 def films_main(request):
-    return render(request, 'main/films.html')
+    return render(request, 'main/films.html', {'dark': True})
 
 
 def films_film(request, id):
@@ -46,3 +46,9 @@ def subscription(request):
 
 def docs(request):
     return render(request, 'main/docs.html')
+
+
+def profile(request):
+    if not request.user.is_authenticated:
+        return redirect('main:home')
+    return render(request, 'main/profile.html')

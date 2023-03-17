@@ -13,6 +13,18 @@ body{
     transform: translate(-50%, -50%);
 }
 
+.error-h{
+    margin-top: 10px;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.message-h{
+    margin-top: 10px;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
 .login-form button{
     margin: 0 16px;
 }
@@ -25,6 +37,10 @@ body{
 .login-end{
     align-self: center;
     margin-top: 10px;
+}
+
+.password-input{
+    margin-bottom: 10px;
 }
 
 .contacts a{

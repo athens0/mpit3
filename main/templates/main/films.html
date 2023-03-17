@@ -1,49 +1,20 @@
+{% extends 'main/layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
-    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+
+{% block links %}
     <link rel="stylesheet" href="{% static 'main/css/films.css' %}">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-    <title>Фильмы</title>
-</head>
-<body>
+{% endblock %}
+
+{% block title %}Фильмы{% endblock %}
+
+{% block content %}
     <main>
-        <header class="container text-center">
-            <div class="row">
-                <div class="col-md header-el-h">
-                    <a href="{% url 'home' %}">
-                        <img class="header-logo" src="{% static 'main/img/logo_white.png' %}" style="zoom: 70%">
-                    </a>
-                </div>
-                <div class="col-md-8 header-el-h">
-                    <a class="header-el btn-middle fw-semibold" href="{% url 'films' %}">Фильмы</a>
-                    <a class="header-el btn-middle fw-semibold" href="#">Сериалы</a>
-                    <a class="header-el btn-middle fw-semibold" href="#">Передачи</a>
-                    <a class="header-el btn-middle fw-semibold" href="#">Подкасты</a>
-                    <a class="header-el btn-middle fw-semibold" href="#">Концерты</a>
-                    <a class="header-el btn-middle fw-semibold" href="#">Архив</a>
-                </div>
-                <div class="col-md header-el-h">
-                    {% if user.is_authenticated %}
-                        {{ user.username }}
-                    {% else %}
-                        <a class="header-el btn-login fw-semibold" href="{% url 'login' %}">Войти</a>
-                    {% endif %}
-                    
-                </div>
-            </div>
-        </header>
+        {% include 'main/header.html' %}
         <div class="text-center">
             <div class="d-flex flex-column mb-3 films-sub-h">
                 <h1 class="fw-bold films-sub-title">Якутские фильмы по подписке<br>Ki:nesire Плюс</h1>
                 <p class="films-sub-desc">Отменить подписку можно в<br>любой момент</p>
-                <a class="films-sub-btn fw-bold" href="{% url 'subscription' %}">Попробовать 30 дней бесплатно</a>
+                <a class="films-sub-btn fw-bold" href="{% url 'main:subscription' %}">Попробовать 30 дней бесплатно</a>
                 <p class="films-sub-btn-desc fw-medium">Затем 299 рублей в месяц</p>
             </div>
         </div>
@@ -60,22 +31,22 @@
                     <div class="carousel-item active">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/4">
+                                <a href="{% url 'main:home' %}film/4">
                                     <img src="{% static 'main/img/cards/ivana.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/2">
+                                <a href="{% url 'main:home' %}film/2">
                                     <img src="{% static 'main/img/cards/nuiji.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/3">
+                                <a href="{% url 'main:home' %}film/3">
                                     <img src="{% static 'main/img/cards/babyreka.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/1">
+                                <a href="{% url 'main:home' %}film/1">
                                     <img src="{% static 'main/img/cards/bortolyot.jpg' %}">
                                 </a>
                             </div>
@@ -84,22 +55,22 @@
                     <div class="carousel-item">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/4">
+                                <a href="{% url 'main:home' %}film/4">
                                     <img src="{% static 'main/img/cards/ivana.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/2">
+                                <a href="{% url 'main:home' %}film/2">
                                     <img src="{% static 'main/img/cards/nuiji.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/3">
+                                <a href="{% url 'main:home' %}film/3">
                                     <img src="{% static 'main/img/cards/babyreka.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/1">
+                                <a href="{% url 'main:home' %}film/1">
                                     <img src="{% static 'main/img/cards/bortolyot.jpg' %}">
                                 </a>
                             </div>
@@ -123,22 +94,22 @@
                     <div class="carousel-item active">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/1">
+                                <a href="{% url 'main:home' %}film/1">
                                     <img src="{% static 'main/img/cards/cheerin.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/2">
+                                <a href="{% url 'main:home' %}film/2">
                                     <img src="{% static 'main/img/cards/zoloto.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/3">
+                                <a href="{% url 'main:home' %}film/3">
                                     <img src="{% static 'main/img/cards/boganet.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/4">
+                                <a href="{% url 'main:home' %}film/4">
                                     <img src="{% static 'main/img/cards/darkhan.jpg' %}">
                                 </a>
                             </div>
@@ -147,22 +118,22 @@
                     <div class="carousel-item">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/1">
+                                <a href="{% url 'main:home' %}film/1">
                                     <img src="{% static 'main/img/cards/cheerin.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/2">
+                                <a href="{% url 'main:home' %}film/2">
                                     <img src="{% static 'main/img/cards/zoloto.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/3">
+                                <a href="{% url 'main:home' %}film/3">
                                     <img src="{% static 'main/img/cards/boganet.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/4">
+                                <a href="{% url 'main:home' %}film/4">
                                     <img src="{% static 'main/img/cards/darkhan.jpg' %}">
                                 </a>
                             </div>
@@ -186,22 +157,22 @@
                     <div class="carousel-item active">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/3">
+                                <a href="{% url 'main:home' %}film/3">
                                     <img src="{% static 'main/img/cards/molodost.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/2">
+                                <a href="{% url 'main:home' %}film/2">
                                     <img src="{% static 'main/img/cards/mambo.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/4">
+                                <a href="{% url 'main:home' %}film/4">
                                     <img src="{% static 'main/img/cards/chuvak.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/1">
+                                <a href="{% url 'main:home' %}film/1">
                                     <img src="{% static 'main/img/cards/it.jpg' %}">
                                 </a>
                             </div>
@@ -210,16 +181,24 @@
                     <div class="carousel-item">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
                             <div class="col img-btn">
-                                <img src="{% static 'main/img/cards/molodost.jpg' %}">
+                                <a href="{% url 'main:home' %}film/3">
+                                    <img src="{% static 'main/img/cards/molodost.jpg' %}">
+                                </a>
                             </div>
                             <div class="col img-btn">
-                                <img src="{% static 'main/img/cards/mambo.jpg' %}">
+                                <a href="{% url 'main:home' %}film/2">
+                                    <img src="{% static 'main/img/cards/mambo.jpg' %}">
+                                </a>
                             </div>
                             <div class="col img-btn">
-                                <img src="{% static 'main/img/cards/chuvak.jpg' %}">
+                                <a href="{% url 'main:home' %}film/4">
+                                    <img src="{% static 'main/img/cards/chuvak.jpg' %}">
+                                </a>
                             </div>
                             <div class="col img-btn">
-                                <img src="{% static 'main/img/cards/it.jpg' %}">
+                                <a href="{% url 'main:home' %}film/1">
+                                    <img src="{% static 'main/img/cards/it.jpg' %}">
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -241,22 +220,22 @@
                     <div class="carousel-item active">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/1">
+                                <a href="{% url 'main:home' %}film/1">
                                     <img src="{% static 'main/img/cards/sailik.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/2">
+                                <a href="{% url 'main:home' %}film/2">
                                     <img src="{% static 'main/img/cards/jay.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/3">
+                                <a href="{% url 'main:home' %}film/3">
                                     <img src="{% static 'main/img/cards/naahara.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/4">
+                                <a href="{% url 'main:home' %}film/4">
                                     <img src="{% static 'main/img/cards/setteexsir.jpg' %}">
                                 </a>
                             </div>
@@ -265,22 +244,22 @@
                     <div class="carousel-item">
                         <div class="row align-items-center justify-content-between" style="margin: 0px">
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/1">
+                                <a href="{% url 'main:home' %}film/1">
                                     <img src="{% static 'main/img/cards/sailik.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/2">
+                                <a href="{% url 'main:home' %}film/2">
                                     <img src="{% static 'main/img/cards/jay.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/3">
+                                <a href="{% url 'main:home' %}film/3">
                                     <img src="{% static 'main/img/cards/naahara.jpg' %}">
                                 </a>
                             </div>
                             <div class="col img-btn">
-                                <a href="{% url 'home' %}film/4">
+                                <a href="{% url 'main:home' %}film/4">
                                     <img src="{% static 'main/img/cards/setteexsir.jpg' %}">
                                 </a>
                             </div>
@@ -341,6 +320,4 @@
             </div>
         </div>
     </div>
-    {% include 'main/footer.html' %}
-</body>
-</html>
+{% endblock %}

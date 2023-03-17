@@ -3,15 +3,22 @@
 {% block title %}Вход{% endblock %}
 
 {% block content %}
-    <form class="login-form border flex-column mb-3">
+    <form class="login-form border flex-column mb-3" method="post">
+        {% csrf_token %}
         <h3 class="login-title">Вход</h3>
+        {% if error %}
+            <div class="mb-3 text-bg-danger p-3 error-h fw-semibold text-center">
+                {{ error }}
+            </div>
+        {% endif %}
         <div class="mb-3">
-            <label for="inputEmail1" class="form-label">Адрес электронной почты</label>
-            <input type="email" class="form-control" id="inputEmail1" aria-describedby="emailHelp">
+            <label for="id_username" class="form-label">Имя пользователя</label>
+            <input type="text" name="username" maxlength="20" class="form-control" id="id_username" autofocus required>
         </div>
         <div class="mb-3">
-            <label for="inputPassword1" class="form-label">Пароль</label>
-            <input type="password" class="form-control" id="inputPassword1">
+            <label for="id_password1" class="form-label">Пароль</label>
+            <input type="password" name="password1" class="form-control password-input" autocomplete="new-password" id="id_password1" required>
+            <span class="password-forgot">Забыли пароль? <a href="#">Восстановить</a></span>
         </div>
         <button type="submit" class="btn btn-primary">Войти</button>
         <span class="login-end">Нету аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a></span>

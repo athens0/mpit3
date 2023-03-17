@@ -8,6 +8,7 @@
 {% block title %}ki:nesire{% endblock %}
 
 {% block content %}
+    {% include 'main/header.html' %}
     <main>
         <h1 class="fw-bold title">Көрдөө. Көр. Дьүүллээ.</h1>
         <span class="fw-light">
@@ -19,7 +20,7 @@
         <form class="search container" role="search">
             <div class="row justify-content-center">
                 <input class="form-control col-sm search-bar" type="search" placeholder="Поиск..." aria-label="Search">
-                <button class="btn btn-outline-success col-sm-auto search-btn" type="submit">Поиск</button>
+                <input type="submit" hidden/>
             </div>
         </form>
 
